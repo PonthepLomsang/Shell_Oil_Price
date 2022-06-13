@@ -13373,7 +13373,7 @@ memory usage: 18.0 KB
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 
-  <div id="df-d03825f9-7c20-4ad2-8709-029ccfbde357">
+  <div id="df-cc9e2952-9a44-4c12-b483-35e2029f3922">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -13474,7 +13474,7 @@ memory usage: 18.0 KB
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-d03825f9-7c20-4ad2-8709-029ccfbde357')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-cc9e2952-9a44-4c12-b483-35e2029f3922')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -13525,12 +13525,12 @@ memory usage: 18.0 KB
 
       <script>
         const buttonEl =
-          document.querySelector('#df-d03825f9-7c20-4ad2-8709-029ccfbde357 button.colab-df-convert');
+          document.querySelector('#df-cc9e2952-9a44-4c12-b483-35e2029f3922 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-d03825f9-7c20-4ad2-8709-029ccfbde357');
+          const element = document.querySelector('#df-cc9e2952-9a44-4c12-b483-35e2029f3922');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -13583,7 +13583,7 @@ memory usage: 18.0 KB
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 
-  <div id="df-d64eef81-3312-4681-a085-e084d28b3a53">
+  <div id="df-3087fbb7-e471-4bc0-9a1c-c2451429d92c">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -13684,7 +13684,7 @@ memory usage: 18.0 KB
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-d64eef81-3312-4681-a085-e084d28b3a53')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-3087fbb7-e471-4bc0-9a1c-c2451429d92c')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -13735,12 +13735,12 @@ memory usage: 18.0 KB
 
       <script>
         const buttonEl =
-          document.querySelector('#df-d64eef81-3312-4681-a085-e084d28b3a53 button.colab-df-convert');
+          document.querySelector('#df-3087fbb7-e471-4bc0-9a1c-c2451429d92c button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-d64eef81-3312-4681-a085-e084d28b3a53');
+          const element = document.querySelector('#df-3087fbb7-e471-4bc0-9a1c-c2451429d92c');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -13773,8 +13773,149 @@ memory usage: 18.0 KB
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount(&#34;/content/drive&#34;, force_remount=True).
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/Shell_Oil_Price&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># read old file csv</span>
+<span class="n">df_old</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;oil_price_shell_gas_station.csv&#39;</span><span class="p">)</span>
+<span class="n">df_old</span><span class="o">.</span><span class="n">datetime</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_old</span><span class="o">.</span><span class="n">datetime</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df_old</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 210 entries, 0 to 209
+Data columns (total 10 columns):
+ #   Column              Non-Null Count  Dtype         
+---  ------              --------------  -----         
+ 0   datetime            210 non-null    datetime64[ns]
+ 1   disel_b7            210 non-null    float64       
+ 2   disel               210 non-null    float64       
+ 3   disel_b20           210 non-null    float64       
+ 4   v_power_disel_b7    210 non-null    float64       
+ 5   v_power_disel       210 non-null    float64       
+ 6   gasohol_91          210 non-null    float64       
+ 7   gasohol_95          91 non-null     float64       
+ 8   v_power_gasohol_95  210 non-null    float64       
+ 9   gasohol_e20         210 non-null    float64       
+dtypes: datetime64[ns](1), float64(9)
+memory usage: 16.5 KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># back up old file</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="n">current_date</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="n">df_old</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;oil_price_shell_gas_station_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">current_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># concat and write file csv done!</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_old</span><span class="p">,</span> <span class="n">df</span><span class="p">])</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;oil_price_shell_gas_station.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># write file csv done!</span>
 <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;oil_price_shell_gas_station.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBconvert น่าจะ Notebook convert to html</span>
+<span class="c1">#%%shell</span>
+<span class="c1">#jupyter nbconvert --to html ///content/Shell_Gas_Station_Web_Scrapping.ipynb</span>
 </pre></div>
 
     </div>
